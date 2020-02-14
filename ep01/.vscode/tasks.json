@@ -8,9 +8,9 @@
         "args": [
           "-std=c++17",
           "-stdlib=libc++",
-          "hello.cpp",
+          "ep01.cpp",
           "-o",
-          "hello.out",
+          "out.ep01",
           "--debug"
         ],
         "group": {
