@@ -22,9 +22,9 @@ struct no_members {};
 
 // assignment:
 // create a class that contains:
-// [] 1 char variable called 'letter'
-// [] 1 bool variable called 'is_uppercase'
-// [] 1 constructor that takes in 1 char variable called 'a_letter'
+// [x] 1 char variable called 'letter'
+// [x] 1 bool variable called 'is_uppercase'
+// [x] 1 constructor that takes in 1 char variable called 'a_letter'
 // [] 1 function called 'bool make_uppercase();'
 //      if the letter is uppercase, it should do nothing and return false
 //      if the letter is lowercase, it should change it to uppercase and return true
@@ -33,7 +33,39 @@ struct no_members {};
 //      otherwise it should not do anything. If success: return true, otherwise false
 // [] 1 function called 'void set_letter(char a_letter);'
 
+struct character
+{
+    char letter;
+    bool is_uppercase;
+
+    character(char a_letter);
+    bool make_uppercase();
+    bool next_letter();
+    void set_letter(char a_letter);
+};
+
+character::character(char a_letter)
+{
+    letter = a_letter;
+}
+
+bool character::make_uppercase()
+{
+    is_uppercase = true;
+
+    if (letter >= 'a' && letter <= 'z')
+    {
+        letter -= 32;
+        return true;
+    }
+    return false;
+}
+
 int main()
 {
     no_members members;
+
+    character letter('a');
+    bool makeUppercase = letter.make_uppercase();
+
 }
