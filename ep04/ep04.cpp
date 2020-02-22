@@ -45,9 +45,11 @@ void trySlideCode()
 // code along part here
 struct enemy
 {
+    // member variables
     int health;
     int damage;
 
+    // class function
     enemy(int a_health, int a_damage);
     void take_damage(int a_damage);
 };
