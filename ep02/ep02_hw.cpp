@@ -60,6 +60,23 @@ bool checkLowercase(char whatCase)
     return false;
 }
 
+// code{}school's solution:
+bool is_lowercase(char character)
+{
+    // could test for '0', '{' and ' ' (or '    ')
+
+    bool equal = 'a' == 97;     // true
+    char letter = 97;           // 'a'
+
+    if (character >= 'a' && character <= 'z')
+    {
+        return true;
+    }
+
+    return false;
+
+}
+
 // assignment 03:
 // write a functin that takes a character and makes it uppercase, but only if it was lowercase
 char makeUppercase(char lowercase)
@@ -71,6 +88,17 @@ char makeUppercase(char lowercase)
     }
    
    return lowercase;
+}
+
+// code{}school's solution: 
+char to_uppercase(char character)
+{
+    if (!is_lowercase(character))
+    {
+        return character;
+    }
+
+    return character - 32;
 }
 
 int main()
