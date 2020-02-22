@@ -39,12 +39,13 @@ struct character
     bool is_uppercase;
 
     character(char a_letter);
+
     void set_letter(char a_letter);
-    bool check_alphabet();
     bool check_uppercase();
     bool make_uppercase();
 
-    bool next_letter();
+    bool has_next_letter();
+    char next_letter();
 };
 
 void character::set_letter(char a_letter)
@@ -83,25 +84,40 @@ bool character::make_uppercase()
 
 }
 
-bool character::check_alphabet()
+bool character::has_next_letter()
 {
-    if (letter >= 'A' && letter <= 'Z')
+    if (letter >= 'A' && letter < 'Z')
     {
         return true;
+        //return letter + 1;
     }
-    else if (letter >= 'a' && letter <= 'z')
+    else if (letter >= 'a' && letter < 'z')
     {
         return true;
+        //return letter + 1;
     }
-
     return false;
+}
+
+char character::next_letter()
+{
+    if (has_next_letter())
+    {
+        return letter + 1;
+    }
+    return '\0';
 }
 
 int main()
 {
     no_members members;
 
-    character letter('a');
+    character letter('q');
+    char next_letter = letter.next_letter();
     bool makeUppercase = letter.make_uppercase();
+    next_letter = letter.next_letter();
+
+    letter.set_letter('\\');
+    next_letter = letter.next_letter();
 
 }
