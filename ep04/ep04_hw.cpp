@@ -8,7 +8,8 @@
 // a: yes, as normal.
 
 // can a class have no member variables?
-// a: 
+// a: yes. It is possible but why would you?
+struct no_members {};
 
 // can a class have a member variable that is of another class?
 // a: yes
@@ -31,3 +32,8 @@
 //      if the letter is between 'A' and 'Z', and 'a' and 'z', it should return a next letter
 //      otherwise it should not do anything. If success: return true, otherwise false
 // [] 1 function called 'void set_letter(char a_letter);'
+
+int main()
+{
+    no_members members;
+}
