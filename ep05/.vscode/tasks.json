@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build with Clang",
+        "type": "shell",
+        "command": "clang++",
+        "args": [
+          "-std=c++17",
+          "-stdlib=libc++",
+          //"ep04.cpp",
+          "ep04_hw.cpp",
+          "-o",
+          "ep04.o",
+          "--debug"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
