@@ -24,7 +24,7 @@ void Enemy::take_damage(int _damage)
 // extra function which uses pointers. Might be dangerous at this point but fun!
 // the code could be more readable now? Maybe? At this time it is because now we can use
 // it as something.attacks(&anotherThing);
-void Enemy::attacks(enemy* _enemy)
+void Enemy::attacks(Enemy* _enemy)
 {
     _enemy->health -= this->damage;
 }
