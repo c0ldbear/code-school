@@ -43,10 +43,37 @@ void trySlideCode()
 }
 
 // code along part here
+struct enemy
+{
+    int health;
+    int damage;
+
+    enemy(int a_health, int a_damage);
+    void take_damage(int a_damage);
+};
+
+enemy::enemy(int a_health, int a_damage)
+{
+    health = a_health;
+    damage = a_damage;
+}
+
+void enemy::take_damage(int a_damage)
+{
+    health -= a_damage; // same as `health = health - a_damage`
+}
 
 int main() 
 {
 
+    enemy will(100, 50);
+    //will.damage = 50;
+
+    enemy stacking(50, 100);
+    //stacking.health = 100;
+
+    will.take_damage(stacking.damage);
+    stacking.take_damage(will.damage);
 
     return 0;
     
