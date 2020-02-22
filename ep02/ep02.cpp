@@ -7,7 +7,7 @@ int attack(int health, int damage)
         health = 0;
     }
 
-    return 0;
+    return health;
 }
 
 int main()
@@ -20,18 +20,16 @@ int main()
     int enemy_damage = 4;
     bool enemy_alive = true;
 
-    player_health -= enemy_damage;
-    if (player_health < 0)
-    {
-        player_health = 0;
-        player_alive = false;
-    }
+    player_health = attack(player_health, enemy_damage);
+    // player_health -= enemy_damage;
+    //if (player_health < 0)
+    //{
+        //player_health = 0;
+        //player_alive = false;
+    //}
 
-    enemy_health -= player_damage;
-    if (enemy_health < 0)
-    {
-        enemy_health = 0;
-        enemy_alive = false;
-    }
+    enemy_health  = attack(enemy_health, player_damage);
+
+    return 0;
 
 }
