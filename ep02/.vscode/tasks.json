@@ -10,7 +10,7 @@
           "-stdlib=libc++",
           "ep02.cpp",
           "-o",
-          "out.ep02",
+          "ep02.o",
           "--debug"
         ],
         "group": {

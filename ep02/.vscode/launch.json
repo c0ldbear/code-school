@@ -9,7 +9,7 @@
             //"type": "cppdbg",
             "type" : "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/out.ep02",
+            "program": "${workspaceFolder}/ep02.o",
             "args": ["-arg1", "-arg2"],
             //"stopAtEntry": true,
             "cwd": "${workspaceFolder}"
