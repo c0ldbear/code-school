@@ -8,7 +8,7 @@
         "args": [
           "-std=c++17",
           "-stdlib=libc++",
-          "ep02.cpp",
+          "ep02_hw.cpp",
           "-o",
           "ep02.o",
           "--debug"
