@@ -2,16 +2,22 @@
 // preassignment questions
 
 // can you use all (data)types as member variables in a class?
+// a: you can use the usual data types as normal.
 
 // can you use all types as return variables of class functions?
+// a: yes, as normal.
 
 // can a class have no member variables?
+// a: 
 
 // can a class have a member variable that is of another class?
+// a: yes
 
-// can you use a class type as an argument in a function?
+// can you use a class type has an argument in a function?
+// a: yes
 
 // can you use a class type as a return value of a function?
+// a: yes
 
 // assignment:
 // create a class that contains:
