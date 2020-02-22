@@ -8,7 +8,7 @@
             "name": "(lldb) Launch",
             "type" : "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/ep05.o",
+            "program": "${workspaceFolder}/episode05.out",
             "args": ["-arg1", "-arg2"],
             "cwd": "${workspaceFolder}"
         }

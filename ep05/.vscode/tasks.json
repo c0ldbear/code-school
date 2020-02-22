@@ -8,10 +8,10 @@
         "args": [
           "-std=c++17",
           "-stdlib=libc++",
-          "./src/ep05.cpp",
+          "src/*.cpp",
           //"ep05_hw.cpp",
           "-o",
-          "ep05.o",
+          "episode05.out",
           "--debug"
         ],
         "group": {
