@@ -8,10 +8,10 @@
         "args": [
           "-std=c++17",
           "-stdlib=libc++",
-          //"ep04.cpp",
-          "ep04_hw.cpp",
+          "./src/ep05.cpp",
+          //"ep05_hw.cpp",
           "-o",
-          "ep04.o",
+          "ep05.o",
           "--debug"
         ],
         "group": {
