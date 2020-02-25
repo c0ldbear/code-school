@@ -75,6 +75,9 @@ void somethingAboutPointers()
     // cleaned when scope is over.
     delete health;
 
+    int* health = new int(50); // "faster, simplier" way of writing a pointer
+    delete health;
+
     /*
     Thinkable illustration:
         the POINTER is a PIECE OF PAPER with the ADDRESS to where you can BUILD A HOUSE.
