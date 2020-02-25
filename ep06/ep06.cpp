@@ -75,8 +75,8 @@ void somethingAboutPointers()
     // cleaned when scope is over.
     delete health;
 
-    int* health = new int(50); // "faster, simplier" way of writing a pointer
-    delete health;
+    int* health2 = new int(50); // "faster, simplier" way of writing a pointer
+    delete health2;
 
     /*
     Thinkable illustration:
