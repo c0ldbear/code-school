@@ -73,7 +73,7 @@ void somethingAboutPointers()
     // because memory allocated by
     // new is not automatically 
     // cleaned when scope is over.
-    delete health;
+    delete health; // deletes the memory address that is stored in the pointer
 
     int* health2 = new int(50); // "faster, simplier" way of writing a pointer
     delete health2;
