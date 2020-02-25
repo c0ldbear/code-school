@@ -84,4 +84,8 @@ void somethingAboutPointers()
         Pointers are stored in STACK, the value it has the address to is in the HEAP.
     */
 
+   // this is the old way of doing pointers, and we'll play around with it next time.
+   // we will also learn more about SMART POINTERS which is smarter and better to use.
+   // e.g. we do not need to think about deleting the pointer, this is done for us.
+
 }
