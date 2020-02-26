@@ -1,11 +1,14 @@
 void healthPointer();
 void playerStructPointer();
+int almostSmartPointer();
 
 int main() 
 {
 
     healthPointer();
     playerStructPointer();
+    
+    int whatr = almostSmartPointer();
    
     return 0;
 }
@@ -53,9 +56,36 @@ player::player()
 void playerStructPointer()
 {
     player* teddy = new player();
-    player* charlie = new player(120, 20);
+    player* ce = new player(120, 20);
 
     delete teddy;
-    delete charlie;
+    delete ce;
 
+}
+
+// A simple example that shows how a smart pointer works in practice but it is much
+// much more complicated than this below. Essentially, it is almost the same.
+struct hold_number
+{
+    int* myNumber;
+
+    hold_number(int aNumber);
+    ~hold_number();
+}; 
+
+hold_number::hold_number(int aNumber)
+{
+    myNumber = new int(aNumber);
+}
+
+hold_number::~hold_number()
+{
+    delete myNumber;
+}
+
+int almostSmartPointer()
+{
+    hold_number numberHolder(1337);
+    return *(numberHolder.myNumber); // x.myNumber is the `int pointer` 
+    // so we need to dereference the whole name: *(x.myNumber) which is the same as *x.myNumber
 }
