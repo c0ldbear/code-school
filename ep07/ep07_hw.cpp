@@ -40,5 +40,11 @@ player::~player()
 
 int main()
 {
+    player t(100, 5);
+
+    {
+        player h(99, 7);
+    }
+
     return 0;
 }
