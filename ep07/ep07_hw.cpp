@@ -3,7 +3,13 @@
 // 01 assignment:
 // a) Practice creating pointers of the fundamental types 
 //      fundamental types: int, float, (double,) void, char
-
+void practicePointers()
+{
+    char* charP = new char('Z');
+    float* floatP = new float(990.91202);
+    // int we've done so many times now
+    void* voidP = new int(20);
+}
 // b) Create a function that creates dynamic memory and returns it
 //      for example: a function that returns an int*
 
@@ -65,8 +71,16 @@ combat::combat(player* m_playerOne, player* m_playerTwo)
 
 combat::~combat()
 {
-    delete playerOne;
-    delete playerTwo;
+    //delete playerOne;
+    //delete playerTwo;
+
+    // We might not need these? 
+    // If we do keep them, `combat` takes the ownership of the players
+    // otherwise it will just "borrow" the players.
+    // It doesn't really make sense to me... Without deleting the
+    // players (here or outside of combat) it should inflict a memory leak, no? 
+    // it will be a leak if not the "owner" of the players deletes them, so
+    // therefore we should always make sure the "owner" deletes the pointers.
 }
 
 void combat::take_damage(player* attacker, player* enemy)
@@ -76,7 +90,7 @@ void combat::take_damage(player* attacker, player* enemy)
 
 void combat::announce_winner()
 {
-    if (*(playerOne->health) > *(playerTwo->health))
+    if (*(playerOne->health) > *playerTwo->health) // two ways of dereferencing the "dubble pointer"
     {
         std::cout << "Player 1 is the winner!\n";
     }
@@ -105,11 +119,17 @@ void combat::run()
 
 int main()
 {
+
+    practicePointers();
+
     player* p1 = new player(100, 5);
     player* p2 = new player(100, 10);
 
     combat c(p1, p2);
     c.run();
+
+    delete p1;
+    delete p2;
 
     return 0;
 }
