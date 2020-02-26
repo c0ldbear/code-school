@@ -133,3 +133,12 @@ int main()
 
     return 0;
 }
+
+// add Olafur's solution here:
+void OlafurSolution()
+{
+
+}
+
+struct Player {};
+struct Combat {};
