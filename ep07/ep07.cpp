@@ -32,6 +32,7 @@ struct player
     int health;
     int damage;
 
+    // two constructors depending on what is called
     player(int m_health, int m_damage);
     player();
 };
@@ -46,7 +47,7 @@ player::player(int m_health, int m_damage)
 player::player()
 {
     health = 100;
-    damage = 1;
+    damage = 11;
 }
 
 void playerStructPointer()
