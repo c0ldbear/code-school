@@ -39,6 +39,13 @@ player::~player()
 }
 // end of struct player
 
+struct combat
+{
+    combat(player* m_playerOne, player* m_playerTwo);
+    ~combat();
+};
+
+
 int main()
 {
     player t(100, 5);
