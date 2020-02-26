@@ -37,6 +37,7 @@ player::~player()
     delete health;
     delete damage;
 }
+// end of struct player
 
 int main()
 {
