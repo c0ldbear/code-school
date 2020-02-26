@@ -45,6 +45,12 @@ struct combat
     ~combat();
 };
 
+combat::combat(player* m_playerOne, player* m_playerTwo)
+{
+
+}
+
+// end of struct combat
 
 int main()
 {
