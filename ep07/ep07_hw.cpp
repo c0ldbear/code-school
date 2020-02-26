@@ -15,3 +15,25 @@
 //  - takes into the constructor two player* pointers (as arguments)
 //  - Makes those two players fight until one is dead (loop through!)
 //      how else it is done, and how it return values is up to us.
+
+// class 01: player
+struct player
+{
+    int* health;
+    int* damage;
+
+    player(int m_health, int m_damage);
+    ~player();
+};
+
+player::player(int m_health, int m_damage)
+{
+    health = new int(m_health);
+    damage = new int(m_damage);
+}
+
+player::~player()
+{
+    delete health;
+    delete damage;
+}
