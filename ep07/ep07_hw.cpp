@@ -1,6 +1,9 @@
+#include <iostream>
 
 // 01 assignment:
 // a) Practice creating pointers of the fundamental types 
+//      fundamental types: int, float, (double,) void, char
+
 // b) Create a function that creates dynamic memory and returns it
 //      for example: a function that returns an int*
 
@@ -46,22 +49,67 @@ struct combat
 
     combat(player* m_playerOne, player* m_playerTwo);
     ~combat();
+
+    void take_damage(player* attacker, player* enemy);
+
+    void announceWinner();
+
+    void run();
 };
 
 combat::combat(player* m_playerOne, player* m_playerTwo)
 {
+    playerOne = m_playerOne;
+    playerTwo = m_playerTwo;
+}
 
+combat::~combat()
+{
+    delete playerOne;
+    delete playerTwo;
+}
+
+void combat::take_damage(player* attacker, player* enemy)
+{
+    *(enemy->health) -= *(attacker->damage);
+}
+
+void combat::announceWinner()
+{
+    if (*(playerOne->health) > *(playerTwo->health))
+    {
+        std::cout << "Player 1 is the winner!\n";
+    }
+    else
+    {
+        std::cout << "Player 2 is the winner!\n";
+    }
+    
+}
+
+void combat::run()
+{
+    std::cout << "Combat begins!\n";
+
+    while (*(playerOne->health) > 0 && *(playerTwo->health) > 0)
+    {
+        take_damage(playerOne, playerTwo);
+        take_damage(playerTwo, playerOne);
+    }
+    std::cout << "End of combat: ";
+    
+    announceWinner();
 }
 
 // end of struct combat
 
 int main()
 {
-    player t(100, 5);
+    player* p1 = new player(100, 5);
+    player* p2 = new player(100, 10);
 
-    {
-        player h(99, 7);
-    }
+    combat c(p1, p2);
+    c.run();
 
     return 0;
 }
