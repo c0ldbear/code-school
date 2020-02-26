@@ -52,7 +52,7 @@ struct combat
 
     void take_damage(player* attacker, player* enemy);
 
-    void announceWinner();
+    void announce_winner();
 
     void run();
 };
@@ -74,7 +74,7 @@ void combat::take_damage(player* attacker, player* enemy)
     *(enemy->health) -= *(attacker->damage);
 }
 
-void combat::announceWinner()
+void combat::announce_winner()
 {
     if (*(playerOne->health) > *(playerTwo->health))
     {
@@ -98,7 +98,7 @@ void combat::run()
     }
     std::cout << "End of combat: ";
     
-    announceWinner();
+    announce_winner();
 }
 
 // end of struct combat
