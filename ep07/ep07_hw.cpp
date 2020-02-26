@@ -37,3 +37,8 @@ player::~player()
     delete health;
     delete damage;
 }
+
+int main()
+{
+    return 0;
+}
