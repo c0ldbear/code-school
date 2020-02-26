@@ -41,6 +41,9 @@ player::~player()
 
 struct combat
 {
+    player* playerOne;
+    player* playerTwo;
+
     combat(player* m_playerOne, player* m_playerTwo);
     ~combat();
 };
