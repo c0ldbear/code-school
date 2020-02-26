@@ -8,8 +8,8 @@
         "args": [
           "-std=c++17",
           "-stdlib=libc++",
-          "ep07.cpp",
-          //"ep07_hw.cpp",
+          //"ep07.cpp",
+          "ep07_hw.cpp",
           //"src/*.cpp",
           "-o",
           "episode07.out",
