@@ -114,8 +114,9 @@ void combat::run()
     
     announce_winner();
 }
-
 // end of struct combat
+
+void OlafurSolution();
 
 int main()
 {
@@ -131,14 +132,97 @@ int main()
     delete p1;
     delete p2;
 
+    OlafurSolution();
+
     return 0;
 }
 
 // add Olafur's solution here:
-void OlafurSolution()
+struct Player
 {
+    int* health;
+    int* damage;
+    
+    Player(int aHealth, int aDamage);
+    ~Player(); // Not added to Olafur's solution in the video but they talk about it
 
+    bool take_damage(int aDamage);
+};
+
+Player::Player(int aHealth, int aDamage)
+{
+    health = new int(aHealth);
+    damage = new int(aDamage);
 }
 
-struct Player {};
-struct Combat {};
+// Not added to Olafur's solution in the video but they talk about it
+Player::~Player()
+{
+    delete health;
+    delete damage;
+}
+
+
+bool Player::take_damage(int aDamage)
+{
+    *health -= aDamage;
+    return *health <= 0;
+}
+
+struct Combat
+{
+    Player* playerOne;
+    Player* playerTwo;
+
+    Combat(Player* aPlayerOne, Player* aPlayerTwo);
+
+    int fight();
+};
+
+Combat::Combat(Player* aPlayerOne, Player* aPlayerTwo)
+{
+    playerOne = aPlayerOne;
+    playerTwo = aPlayerTwo;
+}
+
+int Combat::fight()
+{
+    while (*playerOne->health > 0 && *playerTwo->health > 0)
+    {
+        if (playerOne->take_damage(*playerTwo->damage)) // they talk about adding this if statement but it is not used in the video
+        // and they talk about only using one if-statement and that makes sense because
+        // if playerOne dies before it can make damage to playerTwo it should break the loop
+        // so that playerTwo does not take any damage from a dead playerOne.
+        {
+            break;
+        }
+
+        playerTwo->take_damage(*playerOne->damage);
+    }
+
+    if (*playerOne->health > 0 && *playerTwo->health <= 0)
+    {
+        return 1;
+    }
+
+    if (*playerTwo->health > 0 && *playerOne->health <= 0)
+    {
+        return 2;
+    }
+
+    return 0; // tie in the fight (shouldn't be needed now when the if-statement is added to the while loop but we'll keep it.)
+}
+
+void OlafurSolution()
+{
+    // Olufar's solution from the video
+    Player* P1 = new Player(100, 5);
+    Player* P2 = new Player(100, 21);
+
+    Combat arena(P1, P2);
+    int winner = arena.fight();
+
+    delete P1;
+    delete P2;
+
+}
