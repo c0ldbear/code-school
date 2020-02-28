@@ -8,6 +8,7 @@
         "args": [
           "-std=c++17",
           "-stdlib=libc++",
+          "ngon_random.cpp",
           "ep09.cpp",
           //"ep09_hw.cpp",
           //"src/*.cpp",
