@@ -1,14 +1,17 @@
+#include <iostream> 
 #include <string>
 #include <memory>
-#include <iostream> 
+#include <vector>
 
 void stringExample();
 void shared_ptrExample(); // there is another smart pointer too: unique pointer
+void vectorExample();
 
 int main() 
 {
     stringExample();
     shared_ptrExample();
+    vectorExample();
 
     return 0;
 }
@@ -72,5 +75,28 @@ int GetIntFromSharedPtr(std::shared_ptr<int> aPointer)
     }
 
     return *aPointer;
+
+}
+
+void vectorExample()
+{
+    std::vector<int> some_numbers;
+    some_numbers.push_back(1);
+    some_numbers.push_back(2);
+    some_numbers.push_back(3);
+
+    int health = 54;
+    some_numbers.push_back(health);
+
+    some_numbers.size();
+
+    std::vector<std::string> some_names;
+    some_names.push_back("teddy");
+    some_names.push_back("torre");
+
+    std::string ny_name = "bjor";
+    some_names.push_back(ny_name);
+
+    some_names[0].size();
 
 }
