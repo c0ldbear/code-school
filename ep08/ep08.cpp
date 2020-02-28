@@ -98,5 +98,8 @@ void vectorExample()
     some_names.push_back(ny_name);
 
     some_names[0].size();
+    std::string first_name = some_names.front();
+    std::string a_name = some_names.at(1);
+    some_names.pop_back(); // removes the last item in the vector
 
 }
