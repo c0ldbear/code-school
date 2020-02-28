@@ -1,5 +1,9 @@
 #include <iostream>
 
+// TODO to "improve" the code:
+// [] Refactor code in different files
+//      so it is easier to see the structor of it
+
 // 01 assignment:
 // a) Practice creating pointers of the fundamental types 
 //      fundamental types: int, float, (double,) void, char
