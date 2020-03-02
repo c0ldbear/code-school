@@ -1,3 +1,5 @@
+#include <iostream> // add output to console (std::cout)
+#include <string>   // add strings! (std::string)
 
 // HOMEWORK
 // 1. Practice using std::string
@@ -18,12 +20,49 @@ void vectorPractice();
 
 int main()
 {
-
+    stringPractice();
     return 0;
+}
+
+void displayString(std::string aString)
+{
+    if (aString.empty())
+    {
+        std::cout << "This string is empty!\n";
+    }
+    else
+    {
+        std::cout << aString << "\n";
+    }
+}
+
+std::string concatenateStrings(std::string stringA, std::string stringB)
+{
+    // concatenate = fancier word for add. 
+    return stringA + stringB;
 }
 
 void stringPractice()
 {
+    //  a) use the .empty(), .size(), .clear(), and .replace() functions
+    std::string myString = "That says a thing or two about anything.";
+    std::string myEmptyString = "";
+    displayString(myString);
+    displayString(myEmptyString);
+
+    std::cout << myString.size() << "\n";
+
+    std::string str = myString;
+    displayString(str);
+    str.replace(str.begin(), str.begin()+4, "A string that");
+    displayString(str);
+    myString.clear();
+    displayString(myString);
+    myString.replace(myString.begin(), myString.end(), " This is a new thing.");
+
+//  b) How would you combine 2 strings into 1? (A: just add together with +)
+//      "Olafur" "Gabe" into "OlafurGabe" for example
+    displayString(concatenateStrings(str, myString));
 
 }
 
