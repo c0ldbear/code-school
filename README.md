@@ -39,3 +39,6 @@ Containers such as `vector` and `string` are just neat. N E A T.
 
 ## Episode 09 - Let's Put Theory Into Practice
 Loads of show and tell, but where is the coding? Let's do the coding now and put all the theory we've got into a bit of practice. Now the fun begins.
+
+## Episode 10
+Last episode of this season. What do we do here? We will do some changes to the `old code` from season 01 (coding in [Processing](https://processing.org/)) to use a bit of the stuff we learned in the previous episodes.
